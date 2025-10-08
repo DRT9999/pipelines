@@ -32,6 +32,6 @@ pipelines:
             Build:
               tasks:
                 - exec:
-                    command: ls 
+                    command: pwd
                     arguments:
-                    - -lrt
+                    - ls
