@@ -23,4 +23,15 @@ pipelines:
                     command: ls 
                     arguments:
                     - -lrth
- 
+
+      - qa:                                        # Name of the stage 
+          approval:
+            type: manual
+            allow_only_on_success: true
+          jobs:
+            Build:
+              tasks:
+                - exec:
+                    command: ls 
+                    arguments:
+                    - -lrt
