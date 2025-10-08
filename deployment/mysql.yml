@@ -15,7 +15,10 @@ pipelines:
       - dev:                                        # Name of the stage 
           fetch_materials: true 
           keep_artifacts: false
-          clean_workspace: false 
+          clean_workspace: false
+          environment_variables:
+            env: dev
+            COMP: frontend 
           jobs:
             Build:
               tasks:
