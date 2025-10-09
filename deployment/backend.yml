@@ -35,10 +35,36 @@ pipelines:
           approval:
             type: manual
             allow_only_on_success: true
+          environment_variables:
+              env: qa
+              COMP: backend
+          secure_variables:
+              ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
+              pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w=="    
           jobs:
             Build:
               tasks:
                 - exec:
-                    command: ls
+                    command: bash 
                     arguments:
-                    - lrt
+                    - init.sh
+                    working_directory: ALL_ENV_Ansible
+
+      - stage:                                        # Name of the stage 
+          approval:
+            type: manual
+            allow_only_on_success: true
+          environment_variables:
+              env: stage
+              COMP: backend
+          secure_variables:
+              ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
+              pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w=="    
+          jobs:
+            Build:
+              tasks:
+                - exec:
+                    command: bash 
+                    arguments:
+                    - init.sh
+                    working_directory: ALL_ENV_Ansible
