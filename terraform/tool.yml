@@ -16,16 +16,13 @@ pipelines:
     environment_variables:
         pipeline: "true"
     stages:                                       
-      - dev:                                       
+      - infra:                                       
           fetch_materials: true 
           keep_artifacts: false
           clean_workspace: false
           environment_variables:
-            ENV: dev
-          secure_variables:
-            pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
           jobs:
-            Build:
+            terraform:
               tasks:
                 - exec:
                     command: bash 
