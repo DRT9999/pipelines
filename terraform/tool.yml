@@ -20,7 +20,7 @@ pipelines:
           clean_workspace: false
           environment_variables:
           jobs:
-            terraform:
+            Build:
               tasks:
                 - exec:
                     command: bash 
