@@ -1,0 +1,68 @@
+format_version: 10                
+pipelines: 
+  APP-TOOL:                                             
+    group: Templates
+    label_template: "${COUNT}"
+    materials:
+      mysql-code:
+        git: https://github.com/DRT9999/Ansible.git
+        branch: main
+        auto_update: true 
+        shallow_clone: true
+        display_order: -1
+        lock_behavior: none
+    secure_variables:
+        ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
+    environment_variables:
+        pipeline: "true"
+    stages:                                       
+      - dev:                                       
+          fetch_materials: true 
+          keep_artifacts: false
+          clean_workspace: false
+          environment_variables:
+            ENV: dev
+          secure_variables:
+            pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+          jobs:
+            Build:
+              tasks:
+                - exec:
+                    command: bash 
+                    arguments:
+                    - init.sh
+
+      - qa:
+          approval:
+            type: manual
+            allow_only_on_success: true
+            environment_variables:
+              ENV: qa
+            secure_variables:
+                pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+          jobs:
+            Build:
+              tasks:
+                - exec:
+                    command: bash 
+                    arguments:
+                    - init.sh
+
+      - prod:
+          fetch_materials: true 
+          keep_artifacts: false
+          clean_workspace: false 
+          environment_variables:
+              ENV: prod
+          secure_variables:
+              pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+          approval:
+            type: manual
+            allow_only_on_success: true
+          jobs:
+            Build:
+              tasks:
+                - exec:
+                    command: bash 
+                    arguments:
+                    - init.sh
