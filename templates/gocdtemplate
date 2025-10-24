@@ -12,7 +12,7 @@ pipelines:
         display_order: -1
         lock_behavior: none
     secure_variables:
-        SSH_PSW: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
+        ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
     environment_variables:
         pipeline: "true"
     stages:                                       
@@ -23,7 +23,7 @@ pipelines:
           environment_variables:
             ENV: dev
           secure_variables:
-              MYSQL_PSW: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+            pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
           jobs:
             Build:
               tasks:
@@ -39,22 +39,7 @@ pipelines:
             environment_variables:
               ENV: qa
             secure_variables:
-                MYSQL_PSW: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
-          jobs:
-            Build:
-              tasks:
-                - exec:
-                    command: bash 
-                    arguments:
-                    - init.sh
-      - stage:
-          approval:
-            type: manual
-            allow_only_on_success: true
-            environment_variables:
-              ENV: stage
-            secure_variables:
-                MYSQL_PSW: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+                pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
           jobs:
             Build:
               tasks:
@@ -70,7 +55,7 @@ pipelines:
           environment_variables:
               ENV: prod
           secure_variables:
-              MYSQL_PSW: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+              ped: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
           approval:
             type: manual
             allow_only_on_success: true
