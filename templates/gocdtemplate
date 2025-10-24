@@ -55,7 +55,7 @@ pipelines:
           environment_variables:
               ENV: prod
           secure_variables:
-              ped: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+              pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
           approval:
             type: manual
             allow_only_on_success: true
