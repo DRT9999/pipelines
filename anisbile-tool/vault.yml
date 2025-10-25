@@ -1,7 +1,7 @@
 format_version: 10                
 pipelines: 
   Vault-TOOL:                                             
-    group: T00ls
+    group: Tools
     label_template: "${COUNT}"
     materials:
       mysql-code:
@@ -14,7 +14,7 @@ pipelines:
     secure_variables:
         ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
     environment_variables:
-      tool-name: vault
+      tool_name: vault
     stages:                                       
       - infra:                                       
           fetch_materials: true 
