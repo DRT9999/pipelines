@@ -1,0 +1,28 @@
+format_version: 10                
+pipelines: 
+  Vault-TOOL:                                             
+    group: T00ls
+    label_template: "${COUNT}"
+    materials:
+      mysql-code:
+        git: https://github.com/DRT9999/Tool-Automtion.git
+        branch: main
+        auto_update: true 
+        shallow_clone: true
+        display_order: -1
+        lock_behavior: none
+    secure_variables:
+        ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
+    stages:                                       
+      - infra:                                       
+          fetch_materials: true 
+          keep_artifacts: false
+          clean_workspace: false
+          environment_variables:
+          jobs:
+            Build:
+              tasks:
+                - exec:
+                    command: bash 
+                    arguments:
+                    - init.sh
