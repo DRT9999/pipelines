@@ -25,4 +25,4 @@ pipelines:
                 - exec:
                     command: bash 
                     arguments:
-                    - init.sh
+                    - setupA-tool.sh
