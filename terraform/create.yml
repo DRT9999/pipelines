@@ -15,6 +15,7 @@ pipelines:
         ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
     environment_variables:
         pipeline: "true"
+        action: "destory"
     stages:                                       
       - dev:                                       
           fetch_materials: true 
