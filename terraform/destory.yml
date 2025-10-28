@@ -15,7 +15,7 @@ pipelines:
       ssh_pwd: "AES:dT32hCnvveJA2n0MFS/O9w==:yIrj6vXbBFzJHR7qOMNt/w=="
     environment_variables:
       pipeline: "true"
-      action: apply
+      action: destroy
     stages:
       - dev:
           fetch_materials: true
