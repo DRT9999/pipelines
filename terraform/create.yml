@@ -12,7 +12,7 @@ pipelines:
         display_order: -1
         lock_behavior: none
     secure_variables:
-        ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
+        ssh_pwd: "AES:dT32hCnvveJA2n0MFS/O9w==:yIrj6vXbBFzJHR7qOMNt/w=="
     environment_variables:
         pipeline: "true"
         action: apply
@@ -24,7 +24,7 @@ pipelines:
           environment_variables:
             ENV: dev
           secure_variables:
-            pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+            pwd: "AES:KePqhoxGiGZuSNMAOE9OVg==:SYZ6XIfzC9cyGMyH4PaS9A==" 
           jobs:
             Build:
               tasks:
@@ -40,7 +40,7 @@ pipelines:
             environment_variables:
               ENV: qa
             secure_variables:
-                pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+                pwd: "AES:KePqhoxGiGZuSNMAOE9OVg==:SYZ6XIfzC9cyGMyH4PaS9A==" 
           jobs:
             Build:
               tasks:
@@ -56,7 +56,7 @@ pipelines:
           environment_variables:
               ENV: prod
           secure_variables:
-              pwd: "AES:FHZj3X0rsGzN8OCdEDlPDA==:Ge8AsWzaGR0HIIoNyEjz9w==" 
+              pwd: "AES:KePqhoxGiGZuSNMAOE9OVg==:SYZ6XIfzC9cyGMyH4PaS9A==" 
           approval:
             type: manual
             allow_only_on_success: true

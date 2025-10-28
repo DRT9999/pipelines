@@ -12,7 +12,7 @@ pipelines:
         display_order: -1
         lock_behavior: none
     secure_variables:
-        ssh_pwd: "AES:b0+GQ2Wc95oauxKTo0rSWA==:weqQ03jfzlKRWb1T9ds+PA=="
+        ssh_pwd: "AES:dT32hCnvveJA2n0MFS/O9w==:yIrj6vXbBFzJHR7qOMNt/w=="
     stages:                                       
       - infra:                                       
           fetch_materials: true 
